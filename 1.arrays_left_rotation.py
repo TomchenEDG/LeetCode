@@ -1,3 +1,8 @@
+'''
+----------------------------
+ The first solution.
+ ---------------------------
+'''
 def array_left_rotation(a, k):
     """
     The key point is (I + k) % array_length, 
@@ -15,3 +20,20 @@ def array_left_rotation(a, k):
     return ' '.join(map(str, new_array))
 
 print(array_left_rotation([1, 2, 3, 4, 5], 4))
+
+
+
+'''
+----------------------------
+ The second solution.
+----------------------------
+'''
+
+def shift_list(array, s):
+    
+    s = s % len(array)
+    shifted_array = array[s:] + array[:s]
+
+     return ' '.join(map(str, shifted_array))
+
+print(shift_list([1, 2, 3, 4, 5], 4))
