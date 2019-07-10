@@ -1,7 +1,7 @@
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
 
-nums = [2,0,2,1,1,0,1,2,0,1,0,2]
+nums = [2,0,2,1,1]
 
 class Solution:
     def sortColors(self, nums: 'List[int]') -> 'int':
