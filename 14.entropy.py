@@ -16,11 +16,13 @@ plt.show()
 
 
 
-# 第二种：计算特征的信息熵
-# def entropy(y):
-#     counter = Counter(y)
-#     res = 0.0
-#     for num in counter.values():
-#         p = num / len(y)
-#         res += -p * log(p)
-#     return res
+# 第二种：条件熵
+from collections import Counter
+
+def entropy(y):
+    counter = Counter(y)
+    res = 0.0
+    for num in counter.values():
+        p = num / len(y)
+        res += -p * log(p)
+    return res
