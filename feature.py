@@ -153,7 +153,359 @@
 # msg = 'albert say hi'
 # print(msg.title()) # 每个单词的首字母大写
 
-print(num4.isnumeric()) # True
+# .isnumeric() isnumberic:unicode,中文数字,罗马数字
+# num1 = '一' # 中文数字
+# num2 = '1' # 阿拉伯数字
+# num3 = 'Ⅰ' # 罗马数字
+# print(num1.isnumeric())
+# print(num2.isnumeric())
+# print(num3.isnumeric())
+
+# Python isdecimal() 方法检查字符串是否只包含十进制字符。这种方法只存在于unicode对象。
+# 注意:定义一个十进制字符串，只需要在字符串前添加 'u' 前缀即可。
+# num1 = '12df'
+# num2 = '12'
+# num3 = '二'
+# print(num1.isdecimal())
+# print(num2.isdecimal())
+# print(num3.isdecimal())
+
+# Python isdigit() 方法检测字符串是否只由数字组成。
+# num1 = '12df'
+# num2 = '12'
+# num3 = '二'
+# print(num1.isdigit())
+# print(num2.isdigit())
+# print(num3.isdigit())
+
+# name = 'alb123ert'
+# print(name.isalnum()) # 字符串由字母 或 数字组成
+# print(name.isalpha()) # 字符串只由字母组成
+# print(name.isidentifier()) # 用于判断字符串是否是有效的Python 标识符
+# print(name.islower()) # 检测字符串是否由小写字母组成。
+# print(name.isupper()) # 检测字符串中所有的字母是否都为大写。
+# print(name.isspace()) # 检测字符串是否只由空格组成。
+# print(name.istitle()) # 检测字符串中所有的单词拼写首字母是否为大写，且其他字母为小写。
+
+# .extend 逐个增加元素
+# l1 = [1, 2, 3, 4, 5, ]
+# l1.append ([6, 7, 8, 9, ])
+# print("append:\n", l1)
+#
+# l1.extend([6, 7, 8, 9])
+# print("extend:\n", l1)
+
+# .extend()
+# l1= [1, 2, 3, 4, 5, ]
+# l1.extend([6, 7, 8, 9])
+# print (l1)
+#
+# l1.extend('abc')
+# print(l1)
+#
+# l1.extend('a') #也是可迭代对象
+# print(l1)
+#
+# # l1.extend(1) #报错,不可选代，使用.extend()必须是可迭代对象。1 不是。
+# print(l1)
+
+# .clear() 清除里面的元素，返回空列表
+# l1 = ['a', 'b', 'c', 'd', 'e', 'b', 'c']
+# l1.clear()
+# print (l1)
 
 
+# .index()
+# l1 = ['a', 'b', 'c', 'd', 'e', 'b', 'c']
+# print(l1.index('b',1, 4)) # 两个数字分别对应 起始位置 和 结束位置
+
+
+# 切片
+# l1 = ['a', 'b', 'c', 'd', 'e', 'b', 'c']
+#
+# print(l1[:-1]) # 除了最后一个，其他全部显示
+# print(l1[:-2]) # 除了最后两个，其他全部显示
+# print(l1[5:1:-2]) # 从索引5 到 索引1 ，每隔两个数打印出来
+
+
+# 统计
+# print(['a', 'b', 'c', 'd', 'e', 'b', 'c', 'a', 'a'].count ('a'))
+
+
+# 反序排序
+# l1 = ['a', 1, 'b', 'c', 'd', 'e', 'b', 'c']
+# l1.reverse()
+# print(l1)
+
+
+
+# sort按照ascii码来进行排序
+# l1 = ['a', '1', 'b', 'c', 'd', 'e', 'b', 'A', 'Z', 'c']
+# print(l1)
+#
+# l1.sort()
+# print(l1)
+#
+# l1.sort(reverse=True)
+# print(l1)
+
+
+
+# 关于内存
+# list1 = [1, 2, [3, 4], [5, [6, 7]]]
+# print('list1:', id(list1))
+# print ([id(i) for i in list1])
+#
+# list2 = list1
+# print('list2:', id(list2))
+# print ([id(i) for i in list2])
+#
+# print(list1[0] is list2[0])
+# print(list1[2] is list2[2])
+#
+# list2[0] = -1 # 更改list2也会改变list1的值，因为他们指向同一个id
+# print(list1)
+#
+# list2[2][1] = -1
+# print(list1)
+
+
+
+
+# 理解浅拷贝
+# from copy import copy
+# list1= [1, 2, [3, 4], [5, [6, 7]]]
+# print('list1:', id(list1))
+# print([id(i) for i in list1])
+#
+# list2 = copy(list1)
+# print('list2:', id(list2))
+# print([id(i) for i in list2])
+#
+# # 1 判断论证过程
+# print(list1 is list2) # id不同自然不是, id用来形象表示内存地址
+# print(list1[0] is list2[0]) # 两者之间对应的元素都指向同一个地址
+# print(list1 [2] is list2[2])
+#
+# # 2 对一级元素整体修改论证 ( 其实 此时 可变类型元素 也只能当作不可变来修改 )
+# list1[0] = -1 # 修改列表 1 或 2 都是单独变化的
+# print(list1)
+# print(list2)
+#
+# list2[1] = -2
+# print (list1)
+# print (list2)
+#
+# list1[2] = -3
+# print (list1)
+# print(list2)
+#
+# list2[2] = -30
+# print(list1)
+# print(list2)
+#
+# # 3 给对象添加元素
+# list1.append ('addl')
+# print(list1)
+# print(list2)
+#
+# list2.append ('add2')
+# print(list1)
+# print(list2)
+#
+# # 4 删除
+# list1.pop()
+# print(list1)
+# print(list2)
+#
+# list2.pop()
+# print(list1)
+# print(list2)
+#
+# # list1.pop()
+# # print (list1)
+# # print (list2)
+#
+# # 5 只有对 对象 内一个 可变类型元素内的 元素的修改(包含添加,修改和删除) ,才会同步
+# # list2[-1][0] = '5->55'
+# # print (list1)
+# # print(list2)
+#
+# # 换成list1也是一样,但需要把上面的部分代码注释掉,确保索引位置不会出错
+# list1[3][0] = '5->550 '
+# print('list1:',list1)
+# print('list2:',list2)
+
+
+
+
+
+# 理解深拷贝
+# import copy
+# list1 = [1, 2, 3, 4, 5, [6, 7, 8, ]]
+# list2 = copy.deepcopy(list1)
+# print(id(list1))
+# print(id(list2))
+#
+# list1[5].append(9)
+# print(list1)
+# print(list2)
+#
+# list1.append(6)
+# print(list1)
+# print(list2)
+#
+# list1.pop()
+# print(list1)
+# print(list2)
+
+# 元组，不可更改,只可取值
+# age = (12,3,4)
+# age[0] = 1
+# print(age[0])
+
+
+
+# 字典 .fromkeys() 函数用于创建一个新字典，以序列 seq 中元素做字典的键，value 为字典所有键对应的初始值。
+# l1={'name':'albert', 'age':18, 'gender': 'male'}
+# 第一个参数：迭代循环的字典的key；
+# 第二个参数：表示value,可以多个key循环对应这个value,也可以只有一个key,也可以没有value；
+# a = l1.fromkeys(l1, 'I am Albert')
+# print(a)
+
+# b = dict.fromkeys('name') # 必须有一个可迭代类型,作为字典的key
+# print (b)
+
+# b = dict.fromkeys('e') # 也可以迭代
+# print(b)
+
+# b = dict.fromkeys ( [1,2,3,])
+# print(b)
+
+
+
+
+# 删除字典 del
+# l1= {'name': "albert",'age': 18, 'gender':'male'}
+# del l1['name']
+# print(l1)
+
+
+
+
+# 删除字典键，pop()
+# l1= {'name': 'albert','age': 18,'gender': 'male'}
+# res = l1.pop ('name') # 删除指定key的value,并拿到一个返回值
+# print(res)
+# print(l1)
+
+
+
+# 删除字典键，.popitem()
+# l1= {'name':'albert', 'age':18, 'gender':'male'}
+# res2 = l1.popitem() # 随机返回 并 删除字典中的一对键和值(一般删除末尾对)。
+# # 如果字典已经为空,却调用了此方法,就报出KeyError异常。
+# print(res2)
+# print(l1)
+
+
+
+# setdefault()，只添加不修改
+# d1={'name':'albertage', 'age':18,}
+# d1.setdefault('name','Albert')
+# d1.setdefault('gender','male')
+# print(d1)
+
+
+
+
+# update(),既添加也修改
+# d1={'name':'albertage','age': 18}
+# d1.update({'name':'Albert', 'gender':'male'}) # 注意传参方式的不同
+# print(d1)
+
+
+
+# enumerate()，枚举，打印 key的索引 和 key
+# d1 = {'name':'albertage','age': 18}
+# for a in enumerate(d1):
+#    print(a)
+
+
+
+# 一次性获取字典所有key，value
+# d1={'name':'albertage','age': 18}
+# # a = d1.keys()
+# # print(list(a))
+# #
+# # b = d1.values()
+# # print(list(b))
+# #
+# # c = d1.items()
+# # print(list(c))
+
+
+# collections容器数据类型
+
+# namedtuple(),命名元组
+# from collections import namedtuple # 从collections库中导入namedtuple (导入外部)
+# # 创建一个命名元组对象
+# point = namedtuple('p', ['x', 'y']) # p代表名称, "x"和"y"为内容
+# p = point(1, 2)
+# print(p)
+# print(p.x) #1
+# print(p.y) #2
+
+
+
+
+# 类似列表(list)的容器, 实现了在两端快速添加(append)和弹出(pop)
+# from collections import deque
+#
+# d = deque('abcd')
+# for i in d:
+#    print(i)
+# print('d[0]:',d[0])
+# print('d[1]:',d[1])
+#
+# d.append('e') # 从右边加入
+# print('右边加入e:',d)
+#
+# d.appendleft('x') # 从左边加入
+# print('左边加入x:',d)
+#
+# d.pop() # 从右侧弹出
+# print('右边删除e:',d)
+#
+# d.popleft() # 从左侧弹出
+# print('左边删除x:',d)
+#
+# deque(reversed(d)) #反转顺序
+# print(d)
+# #d = list(d) #转化成1ist
+# #d = list(reversed(d))
+# #print(d)
+# d.extend('xyz') # 从右侧添加
+# print('从右侧添加xyz:',d)
+#
+# d.extendleft('nba') # 从左侧添加
+# print('从左侧添加nba:',d)
+#
+# d.rotate(1) # 把最右边的元素挪到最左边
+# print('把最右边的元素挪到最左边:',d)
+#
+# d.rotate(-1) # 把最左边的元素挪到最右边
+# print('把最左边的元素挪到最右边:',d)
+#
+# d.clear() #清空
+# d.pop()  #报错
+
+
+# ChainMap 链映射
+# from collections import ChainMap
+# #链映射的用法
+# dict1 = {'name':'Albert', 'age':18}
+# dict2 = {'weight':65, 'height':180}
+# res = list(ChainMap(dict1, dict2))
+# print(res)
 
