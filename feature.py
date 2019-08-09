@@ -359,6 +359,8 @@
 # print(list1)
 # print(list2)
 
+
+
 # 元组，不可更改,只可取值
 # age = (12,3,4)
 # age[0] = 1
@@ -368,17 +370,17 @@
 
 # 字典 .fromkeys() 函数用于创建一个新字典，以序列 seq 中元素做字典的键，value 为字典所有键对应的初始值。
 # l1={'name':'albert', 'age':18, 'gender': 'male'}
-# 第一个参数：迭代循环的字典的key；
-# 第二个参数：表示value,可以多个key循环对应这个value,也可以只有一个key,也可以没有value；
+# # 第一个参数：迭代循环的字典的key；
+# # 第二个参数：表示value,可以多个key循环对应这个value,也可以只有一个key,也可以没有value；
 # a = l1.fromkeys(l1, 'I am Albert')
 # print(a)
-
+#
 # b = dict.fromkeys('name') # 必须有一个可迭代类型,作为字典的key
 # print (b)
-
+#
 # b = dict.fromkeys('e') # 也可以迭代
 # print(b)
-
+#
 # b = dict.fromkeys ( [1,2,3,])
 # print(b)
 
@@ -445,6 +447,7 @@
 # # print(list(c))
 
 
+
 # collections容器数据类型
 
 # namedtuple(),命名元组
@@ -501,11 +504,233 @@
 # d.pop()  #报错
 
 
+
 # ChainMap 链映射
 # from collections import ChainMap
-# #链映射的用法
+# # 链映射的用法
 # dict1 = {'name':'Albert', 'age':18}
 # dict2 = {'weight':65, 'height':180}
 # res = list(ChainMap(dict1, dict2))
 # print(res)
 
+
+
+# 判断字典.keys()是否包含所有关键值
+# dict1 = {'name':'Albert', 'age':18}
+# print('name'in dict1.keys())
+
+
+
+# 获取当前这个feature.py的地址
+# import sys
+# list_test = sys.argv
+# print(list_test)
+
+
+# pop()
+# list_a = [1,2,3]
+# list_b = list_a.pop()
+# print(list_b)
+# print(list_a)
+
+
+
+# 查找字符 X.index()
+# info = 'abca'
+# print(info.index('a'))
+# print(info.index('b'))
+# print(info.index('c'))
+# print(info.index('a'))
+
+
+
+# capitalize():首字母大写
+# info = 'abca,bdbd'
+# print(info.capitalize())
+
+
+
+# title():每个单词的首字母大写
+# info = 'abca,bdbd'
+# print(info.title())
+
+
+
+# swapcase():大小写反转
+# info = 'abca,bdbd'
+# print(info.swapcase())
+
+
+
+# isidentifier() 用于判断字符串是否是有效的 Python 标识符，
+# 可用来判断变量名是否合法。
+# print( "if".isidentifier() )
+# print( "def".isidentifier() )
+# print( "class".isidentifier() )
+# print( "_a".isidentifier() )
+# print( "中国123a".isidentifier() )
+# print( "123".isidentifier() )
+# print( "3a".isidentifier() )
+# print( "".isidentifier() )
+
+# .fromkeys():建立字典
+# b = dict.fromkeys([1,2,3],["a",'b','c'])
+# print(b)
+# b = dict.fromkeys('e')
+# print(b)
+
+
+# del 字典删除
+# b = dict.fromkeys([1,2,3],["a",'b','c'])
+# print(b)
+# del b[1]
+# print(b)
+
+
+# pop 字典删除
+# b = dict.fromkeys(['name',2,3],["a",'b','c'])
+# print(b)
+# b.pop('name')
+# print(b)
+
+
+# .setdefault():只添加不修改
+# d1 = {'name':'albert',
+#       'age':18,
+# }
+# d1.setdefault('name','Albert')
+# d1.setdefault('gender','male')
+# print(d1)
+
+# update():既添加也修改
+# d1 = {'name':'albert',
+#       'age':18,
+# }
+# d1.update({'name':'Albert', 'gender':'male'})
+# print(d1)
+
+# 枚举:(0, 'name') (1, 'age')
+# d1 = {'name':'albert',
+#       'age':18,
+# }
+# for a in enumerate(d1):
+#     print(a)
+
+
+# range():怎么打印的？不会打印10，顾头不顾尾
+# for i in range(1,10):
+#     print(i)
+
+
+# a 不是 b，所以true
+# a = 1
+# b = 2
+# if  a is not b:
+#     print('12')
+
+
+
+# 三种函数返回None
+# def foo():
+#     pass
+# def foo1():
+#     return
+# def foo2():
+#     return None
+# re,re1,re2 = foo(),foo1(),foo2()
+# print(re,re1,re2)
+
+
+
+# 返回不同组合的数据，返回后变成元组
+# def func():
+#     return 1,2,3,[1,2,3]
+# re=func()
+# print(re)
+
+
+
+# 默认参数
+# m = 10
+# def func(i,y=m):
+#     print(y, i)
+# func(1)
+
+
+
+# 可变长参数 *args
+# def func(x,y,*args):
+#     print(x,y,args)
+# func(1,2, 3,4,5,6,7,8)
+
+
+
+# 可变长参数 **args
+# def func(x,y,**kwargs):
+#     print(x,y,kwargs)
+# func(x=1,y=2,z=3,a=1,b=2,c=3)
+
+
+
+# 使用各种实参来测试*args
+# def foo(x,y,z,*args):
+#     print(x,y,z)
+#     print(args)
+# foo(1,2,3,*[1,2,3,4,5,6])
+# foo(1,2,3,*(1,2,3,4,5,6))
+# foo(1,2,3,*'hello')
+# foo(1,2,3,*{'a':1,'b':2})
+# foo(*[1,2,3,4])
+
+
+
+# 需注意的点：
+# def foo(x,y,z):
+#     print(x)
+#     print(y)
+#     print(z)
+# foo(*[4,5,1])
+# foo(*[4,5])
+
+
+# 溢出的参数都为放到了 kwargs
+# def auth(name,password,**kwargs):
+#     print(name)
+#     print(password)
+#     print(kwargs)
+#
+# # auth(name='Albert',password='123')
+# auth(name='Albert',password='123',group='group1',groups='group2')
+
+
+
+# 组合使用:*args **kwargs
+# def index(name, age, gender):
+#     print('welcome %s %s %s'%(name, age, gender))
+#
+# def wrapper(*args, **kwargs):
+#     print("args:",args)
+#     print("kwargs:",kwargs)
+#     index(*args, **kwargs)
+
+# wrapper(name='Albert', age=18, gender='male')
+# wrapper('Albert', age=18, gender='male')
+# wrapper('Albert', 18, gender='male')
+# wrapper(18,'Albert',  'male')
+
+
+
+# 使用命名关键字参数
+# def foo(x, y, *, z):
+#     print(x, y, z)
+# # foo(1,2)
+# # foo(1,2,3)
+# # foo(1,2,a=3)
+# foo(1,2,z=3)
+
+
+
+# 熟练*args
+# def auth(*args, name, pwd):
+#     print(name, pwd)
+# auth(pwd='123', name='Albert')
