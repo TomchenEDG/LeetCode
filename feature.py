@@ -734,3 +734,52 @@
 # def auth(*args, name, pwd):
 #     print(name, pwd)
 # auth(pwd='123', name='Albert')
+
+
+# pop()
+# a = [1,2,3,4,5]
+# for i in range(0,len(a),2):
+#     a[i] = 0
+# for i in a:
+#     if not i:
+#         a.remove(i)
+# print(a)
+
+
+# 元组
+# a = (1,1)
+# b = (2,2)
+# c = a + b
+# print((c[0],))
+
+# 列表
+# a = [12,3]
+# b = [1,1]
+# c = a+b
+# print(c)
+
+
+
+# pop()删除里面的最后一个{}
+# c = 1
+# def add():
+#     print(c)
+# def addd():
+#     print(c)
+# add()
+# addd()
+
+
+
+# 列表里面放字典
+# a = [{1},{}]
+# print(a)
+# a.pop()
+# print(a)
+
+
+
+# 切片回忆
+# a ='abcd123'
+# print(a[:2])
+
