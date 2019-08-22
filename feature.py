@@ -746,6 +746,7 @@
 # print(a)
 
 
+
 # 元组
 # a = (1,1)
 # b = (2,2)
@@ -782,4 +783,148 @@
 # 切片回忆
 # a ='abcd123'
 # print(a[:2])
+
+
+
+# 倒转打印列表的值
+# a = [1,2,3,4]
+# for i in range(len(a),-1,-1):
+#     print(i)
+
+
+# 可变长参数
+# def aa(x,y,*args):
+#     return x,y,args
+#
+# b = aa(1,2,3,4,5,6)
+# print(b)
+
+
+
+# 实参添加 * 等于打散实参值
+# def aa(x,y,z,*kwargs):
+#     return x,y,z,kwargs
+# # b = aa(x=1,y=2,z=3,a=1,b=2,c=3)
+# # print(b)
+# # b = aa(1,2,3,*(4,5,6,7,7))
+# b = aa(1,2,3,'hello','world')
+# print(b)
+
+
+
+# * 使用来打散实参
+# def foo(x,y,z):
+#     print(x,y,z)
+#
+# foo(*'hel')
+
+
+
+# ** 也是打散值
+# def foo(x,y,z):
+#     print(x,y,z)
+#
+# foo(1,**{'z':2,'y':3})
+
+
+# 限制关键字名称
+# def auth(*args, **kwargs):
+#     if len(args)!=0:
+#         print('必须用关键字的形式传参')
+#         return
+#     if 'name' not in kwargs:
+#         print('必须用指定的key名name')
+#         return
+#     if 'pwd' not in kwargs:
+#         print('必须用指定的key名pwd')
+#         return
+#
+#     name = kwargs['name']
+#     pwd = kwargs['pwd']
+#     print(name, pwd)
+#
+# auth(x='Albert', y='123')
+# auth('Albert', '123')
+# auth('Albert', pwd='123')
+# auth(name='Albert', pwd='123')
+
+
+# * 后面都限制为关键字参数
+# def auth(*args, name, pwd):
+#     print(name, pwd)
+#
+# # auth(name='Albert', pwd='123')
+# auth('Albert', '123')
+
+
+# math.floor：向下取
+# import math
+# a = math.floor(1)
+# print(a)
+
+
+
+# 字典
+# menu = {'汽车':
+#             {'轿车':
+#                  {'宝马':
+#                       {'宝马760'}}}}
+#
+# layers = [menu, ]
+#
+# print(layers[-1])
+#
+# for key in layers:
+#     print(key)
+
+# 字符搜索
+# s = 'jr_shenjing'
+# if 'shenjing' in s:
+#     print(True)
+
+
+
+# x.endswith() 作用：判断字符串是否以指定字符或子字符串开头
+# s = 'jr_shenjing'
+# print(s.endswith('shenjing'))
+
+
+
+# x.endswith()作用：判断字符串是否以指定字符或子字符串开头
+# names=['albert','jr_shenjing','kobe','kd']
+# # names=[len(name) for name in names if not name.endswith('shenjing')]
+# # print(names)
+# for name in names:
+#     if not name.endswith('shenjing'):
+#         print(name)
+
+
+# yield
+# def test_yield():
+#     print('first')
+#     yield 1
+#     print('second')
+#     yield 2
+#     print('third')
+#     yield 3
+#
+# res = test_yield()
+# print(res)
+# print(res.__iter__() is res)
+# print(res.__next__())
+# print(res.__next__())
+# print(res.__next__())
+# print(res.__next__())
+
+# 自定义range
+# def show_my_range(start, stop, step=1):
+#     n = start
+#     while n < stop:
+#         yield n
+#         n += step
+#
+# for item in show_my_range(1, 10, 3):
+#     print(item)
+
+
 
