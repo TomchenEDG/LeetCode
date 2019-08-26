@@ -927,4 +927,179 @@
 #     print(item)
 
 
+# Python文件
+# import spam
 
+# print(spam)
+#
+# print(spam.money)
+# spam.read1()
+#
+# money = 1
+# print(spam.money)
+
+# read1 = 2
+# read2 = 3
+
+# spam.read1()
+# spam.read2()
+# print()
+# spam.change()
+# spam.read1()
+
+# from...import....
+# from spam import *
+# # print(money)
+# # print(read1)
+# # print(read2)
+
+# from spam import *
+# # print(money)
+
+# 全局作用域
+# global_count = 0
+#
+# def global_check():
+#     print(global_count)
+#
+# def global_modify():
+#     global global_count
+#     global_count += 1
+#     print(global_count)
+#
+# global_check()
+# global_modify()
+
+# 局部作用域
+# def make_counter():
+#     count = 0
+#
+#     def check_counter1():
+#         print(count)
+#
+#         def check_counter2():
+#             print(count)
+#
+#         check_counter2()
+#
+#     check_counter1()
+#
+#     def modify_counter():
+#         nonlocal count
+#         count += 1
+#         print(count)
+#
+#     modify_counter()
+#
+# make_counter()
+
+# def bar():
+#     print('Yes')
+#
+# f = bar
+# f()
+#
+# def bar():
+#     print('Yes')
+#
+# def wrapper(func):
+#     func()
+#
+# wrapper(bar)
+
+# z = 1
+# l = [z,]
+# print(l)
+
+# def get():
+#     pass
+#
+# def put():
+#     pass
+#
+# l1 = [get, put]
+# print(l1)
+# l1[0]()
+
+
+
+# def outer():
+#     x = 1
+#     def inner():
+#         x = 2
+#         print('from inner:', x)
+#
+#     return inner
+#
+# f = outer()
+# f()
+
+# * 打散作用
+# def foo(x,y,z,*args):
+#     print(x,y,z,args)
+#
+# foo(1,2,3,4,5,6)
+
+# def foo(x,y,z,*args):
+#     print(x,y,z)
+#     print(args)
+
+# foo(1,2,3,*[4,5,6,7,8])
+# foo(1,2,3,*(4,5,6,7,8))
+# foo(1,2,3,'hello')
+# foo(1,2,3,*'hello')
+
+
+
+# **打散
+# def foo(x,y,z,**kwargs):
+#     print(x,y,z)
+#     print(kwargs)
+#
+# foo(1,2,3,**{'a':4,'b':5})
+# foo(1,2,3, a=4, b=5)
+
+# def boo(x,y,z):
+#     print(x,y,z)
+#
+# boo(1, **{'z':3, 'y':2})
+
+
+
+# def sum2(*args):
+#     res = 0
+#     for num in args:
+#         res += num
+#     return res
+#
+# r = sum2(1,2,3,4,5,6,7)
+# print(r)
+
+
+# def index(name, age, gender):
+#     print('welcome %s %s %s'%(name, age, gender))
+#
+# def wrapper(*args, **kwargs):
+#     print(args)
+#     print(kwargs)
+#     index(*args, **kwargs)
+#
+# # wrapper(1,2,3,a=1,b=2,c=3)
+# wrapper(name='Albert', age=18, gender='male')
+# warpper('Albert', age=18, gender='male')
+
+# *args放前面约束了
+# def auth(*args, name ,pwd):
+#     print(name, pwd)
+#
+# auth(pwd='123', name='Albert')
+# auth('123','Ablert')
+
+
+
+# def auth(name ,pwd):
+#     print(name, pwd)
+#     print(type(name))
+#
+# auth(pwd='123', name='Albert')
+# auth('123','Ablert')
