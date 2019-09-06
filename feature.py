@@ -1103,3 +1103,464 @@
 #
 # auth(pwd='123', name='Albert')
 # auth('123','Ablert')
+
+# 三元表达式
+# x = 12
+# y = 13
+#
+# res = x if x > y else y
+# print(res)
+
+# 递归
+# def get(n):
+#     if n == 1:
+#         return 18
+#     return get(n-1)+2
+#
+# s = get(5)
+# print(s)
+
+# 匿名函数
+# res = lambda x,n: x**n
+# print(res)
+# print(res(2,2))
+
+# re = lambda x,y: x+y
+# print(re)
+# print(re(1,2))
+
+# print(sorted([2,5,4,6], reverse=True))
+# print(max([3,5,43,]))
+
+# 联合 匿名函数和max一起使用
+# salaries = {
+#     'james': 30000,
+#     'kd': 1000,
+#     'zi': 10000
+# }
+#
+# print(max(salaries, key=lambda x: salaries[x]))
+
+# 映射
+# nums = [3,4,6,7]
+# new_nums = map(lambda x: x**2, nums)
+# print(list(new_nums))
+
+# names = ['J', 'S', 'A']
+# new_names = map(lambda x: x+'test', names)
+# print(list(new_names))
+
+# from functools import reduce
+# re = reduce(lambda x, y: x + y, range(1, 101), 0)
+# print(re)
+
+# list1 = ['today', 'is','the', 'first', 'day', 'of', 'the', 'rest', 'of', 'your', 'life', '.']
+# re = reduce(lambda x, y: x + ' '+ y + ' ', list1)
+# print(re)
+
+# ages = [10,11,12,13,14,15,16]
+# # re = filter(lambda n:True if n < 12 else False, ages)
+# re = filter(lambda n: n < 12, ages)
+# print(list(re))
+
+# print('a'.zfill(10))
+# print('{:.5f}'.format(3.2423243))
+# print('{:,}'.format(123123123123))
+
+# re = eval('2*3')
+# print(re)
+# re1 = eval('[1,2,3,4]')
+# print(re1)
+# re2 = eval('{"name":"albert", "age":18}')
+# print(re2)
+
+# s = {1,2,3}
+# s.add(5)
+# print(s)
+# frozenset({s})
+# s.add(6)
+
+# print(hash('a'))
+# print(hash((12,3,4)))
+# print(pow(2,3,3))
+# print(round(3,5))
+
+# left = 'hello'
+#
+# right1 = {'x':1, 'y':2, 'z':3}
+# right2 = [1,2,3,4,5]
+#
+# re = zip(left, right1)
+# print(list(re))
+
+# re = [i for i in range(1,101) if i%2==0]
+# print(re)
+
+# re = (i for i in range(0,101) if i%2==0)
+# print(re)
+# for i in range(1,4):
+#     print(re.__next__())
+
+# 内置函数
+# print(print)
+
+# 全局作用域
+# globals_count = 0
+#
+# def global_modify():
+#     global globals_count
+#     globals_count = 1
+#     print(globals_count)
+#
+# global_modify()
+
+# 局部作用域
+# def make_counter():
+#     count = 0
+#
+#     def modify_counter():
+#         nonlocal count
+#         count = 1
+#         print(count)
+#
+#     modify_counter()
+#
+# make_counter()
+
+# 闭包函数
+# def outer():
+#     x = 1
+#     def inner():
+#         x = 2
+#         print(x)
+#     return inner
+#
+# f = outer()
+# print(f)
+
+# 闭包函数
+# def outer():
+#     name = 'albert'
+#     def inner():
+#         print('my name is {}'.format(name))
+#     return inner
+#
+# f = outer()
+# print(f)
+# f()
+
+# import os
+#
+# def modify_file(file_name, old_content, now_content):
+#     with open(file_name, mode='r', encoding='utf-8') as read_f,\
+#         open('%s.swap'%file_name, mode='w', encoding='utf-8') as write_f:
+#         for line in read_f:
+#             if old_content in line:
+#                 line = line.replace(old_content, now_content)
+#
+#             write_f.write(line)
+#     os.remove(file_name)
+#     os.rename('%s.swap'%file_name, file_name)
+
+
+# def calculate_count(data_str):
+#     dict_count = {'alpha':0, 'number':0, 'space':0, 'other':0}
+#     for i in data_str:
+#         if i.isalpha():
+#             dict_count['alpha'] += 1
+#         elif i.isdigit():
+#             dict_count['number'] += 1
+#         elif i is ' ':
+#             dict_count['space'] += 1
+#         else:
+#             dict_count['other'] += 1
+#     return dict_count
+
+
+# names = ['dfxcv','weuy', 'sdfjl', 'wuo']
+# NAMES = [i.capitalize() for i in names]
+# print(NAMES)
+# print(list(map(lambda x:x.capitalize(), names)))
+
+
+# names = ['dfxcv','weuy', 'sdfjl', 'wuo', 'dfs_shenjing']
+# for i in range(len(names)):
+#     if names[i].endswith('shenjing')>0:
+#         names.pop(i)
+# names_lens = [len(i) for i in names]
+# print(names_lens)
+
+# names = ['dfxcv','weuy', 'sdfjl', 'wuo', 'dfs_shenjing']
+# names_list = list(filter(lambda x: not x.endswith('shenjing'), names))
+# print(names_list)
+
+# maxnum = 0
+# with open('a.txt', mode='r', encoding='utf-8') as f:
+#     for line in f:
+#         if len(line.strip()) > maxnum:
+#             maxnum = len(line.strip())
+# print(maxnum)
+#
+# with open('a.txt', 'r', encoding='utf-8') as f:
+#     for line in f:
+#         print(len(max([line.strip() for line in f], key=lambda x:len(x))))
+
+# 定义类
+# class DeepshareStudent:
+#     school = 'deepshare'
+#     print('====>')
+#     def __init__(self):
+#         print('===init run====>')
+#     def learn(self):
+#         print('%s is learning'%self)
+#     def eat(self):
+#         print('is eating')
+#     def sleep(self):
+#         print('is sleeping')
+
+# name_and_func = DeepshareStudent.__dict__
+# print(name_and_func)
+# print(name_and_func['school'])
+# print(name_and_func['learn'])
+# name_and_func['learn']()
+# 修正
+# name_and_func['learn']('albert')
+
+# print(DeepshareStudent.school)
+# print(DeepshareStudent.learn)
+# print(DeepshareStudent.eat)
+# print(DeepshareStudent.sleep)
+
+# print(DeepshareStudent.learn('albert'))
+
+# DeepshareStudent.abc
+
+# 修改属性
+# DeepshareStudent.school = 'asd'
+# print(DeepshareStudent.school)
+#
+# # 增加属性
+# DeepshareStudent.country = 'city'
+# print(DeepshareStudent.country)
+#
+# # 删除属性
+# del DeepshareStudent.country
+# print(DeepshareStudent.country)
+
+# 调用类
+# DeepshareStudent()
+
+# stu1 = DeepshareStudent()
+# print(stu1.school)
+
+# __init__函数
+# DeepshareStudent()
+
+# 定义类
+# class DeepshareStudent:
+#     school = 'deepshare'
+#     def __init__(self, x, y, z):
+#         self.NAME = x
+#         self.AGE = y
+#         self.GENDER = z
+#     def learn(self):
+#         print('%s is learning'%self)
+#     def eat(self):
+#         print('is eating')
+#     def sleep(self):
+#         print('is sleeping')
+#
+# stu1 = DeepshareStudent('albert', 18, 'male')
+# print(stu1.school)
+# print(stu1.NAME)
+
+# 闭包函数的练习
+# db = 'a.txt'
+# login_status = {'status':False}
+#
+# def auth(auth_type = 'file'):
+#     def auth2(func):
+#         def wrapper(*args, **kwargs):
+#             if login_status['status']:
+#                 return func(*args, **kwargs)
+#             if auth_type == 'file':
+#                 with open(db, encoding='utf-8') as f:
+#                     dic = eval(f.read())
+#                 name = input('username:').strip()
+#                 password = input('password').strip()
+#                 if name == dic['name'] and  password == dic['password']:
+#                     login_status['status'] = True
+#                     res = func(*args, **kwargs)
+#                     return res
+#                 else:
+#                     print('username or passwrod error')
+#             elif auth_type == 'sql':
+#                 pass
+#             else:
+#                 pass
+#
+#         return wrapper
+#
+#     return auth2
+#
+# @auth()
+# def index():
+#     print('index')
+#
+# @auth(auth_type='file')
+# def home(name):
+#     print('welcome %s to home'%name)
+#
+# index()
+# home('albert')
+
+# 闭包函数练习2
+# import time
+# import random
+#
+# user_data = {
+#     'user':None,
+#     'login':False,
+#     'now_time':time.time()
+# }
+# db_username = 'albert'
+# db_password = '123'
+
+# time.sleep(2)
+# passed_time = time.time() - user_data['now_time']
+# print(passed_time)
+
+# now_time = time.time()
+# time.sleep(2)
+# pass_time = time.time()
+# l_time = pass_time - now_time
+# print(l_time)
+
+# def auth(func):
+#     def wrapper(*args, **kwargs):
+#         passed_time = time.time() - user_data['now_time']
+#
+#         if user_data['user'] and passed_time < 3:
+#             return func(*args, **kwargs)
+#         else:
+#             while True:
+#                 username = input('input your username>>:').strip()
+#                 password = input('input your password>>:').strip()
+#                 if username == db_username and password == db_password:
+#                     print('login sucessfully')
+#                     user_data['user'] = username
+#                     user_data['login'] = True
+#                     user_data['now_time'] = time.time()
+#                     return func(*args, **kwargs)
+#                 else:
+#                     print('username or password is invalid')
+#
+#     return wrapper
+#
+# @auth
+# def index():
+#     print('This is index page')
+#
+# @auth
+# def home(name):
+#     print('welcome %s to home page'%name)
+#
+# index()
+# time.sleep(random.randint(2,4))
+# home('albert')
+
+# 闭包函数 练习3
+# import time
+#
+# def add_log(file):
+#     def wrapper(func):
+#         def inner(*args, **kwargs):
+#             with open(file, 'a', encoding='utf-8') as f:
+#                 f.write('[%s]:[%s]\n'%(func.__name__, time.strftime('%Y-%m-%d %X')))
+#                 return func(*args, **kwargs)
+#
+#         return inner
+#
+#     return wrapper
+#
+# @add_log('db1.txt')
+# def index():
+#     print('This is index page')
+#
+# @add_log('db2.txt')
+# def home(name):
+#     print('Welcome %s to home page '% name)
+#
+# index()
+# home('albert')
+
+# 第3条
+# Pthon3中，我们需要编写接收str或bytes，并总是返回str的方法：
+# isinstance() 函数来判断一个对象是否是一个已知的类型，类似 type()。
+# def to_str(bytes_or_str):
+#     if isinstance(bytes_or_str, bytes):
+#         value = bytes_or_str.decode('utf-8')
+#     else:
+#         value = bytes_or_str
+#     return value
+
+# 迭代器
+# dict1 = {'x':1, 'y':2, 'z':3}
+# iter_dict1 = dict1.__iter__()
+# print(iter_dict1.__next__())
+# print(iter_dict1.__next__())
+# print(iter_dict1.__next__())
+# print(iter_dict1.__next__())
+
+# str1 = 'hello'
+# iter_dict1 = str1.__iter__()
+# print(iter_dict1.__next__())
+# print(iter_dict1.__iter__() is iter_dict1)
+
+# def test_yield():
+#     print('======>first')
+#     yield 1
+#     print('======>second')
+#     yield 2
+#     print('======>third')
+#     yield 3
+#
+# print(test_yield)
+# res = test_yield()
+# print(res)
+# print(res.__iter__() is res)
+# print(res.__next__())
+# print(res.__next__())
+# print(res.__next__())
+# print(res.__next__())
+
+# def show_my_range(start, stop, step=1):
+#     n = start
+#     while n < stop:
+#         yield n
+#         n += step
+#
+# res = show_my_range(1, 10)
+# print(res)
+# print(res.__next__())
+# print(res.__next__())
+# print(res.__next__())
+#
+# for i in show_my_range(1,10):
+#     print(i)
+
+# def eat(name):
+#     print('[1] %s is ready for eating'%name)
+#     while True:
+#         food = yield
+#         print('[2] %s starts to eat %s'%(name, food))
+#
+# person1 = eat('Albert')
+# print(person1)
+# person1.__next__()
+# person1.__next__()
+# person1.__next__()
+# person1.__next__()
+
+
+
