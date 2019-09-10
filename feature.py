@@ -1562,5 +1562,33 @@
 # person1.__next__()
 # person1.__next__()
 
+# import math
+#
+# def my_sqrt(num):
+#     if num < 0: print("请输入大于0")
+#     elif num < 1: return 0
+#     elif 1 < num < 2: return 1
+#     else:
+#         l, h = 0, num
+#         while l <= h:
+#             m = math.floor((l + (h - l))/2)
+#             if num/m > m:
+#                 l = m + 1
+#             elif num/m < m:
+#                 h = m - 1
+#             else:
+#                 return m
+#     return h
 
 
+# from collections import namedtuple
+# point = namedtuple('p', ['x', 'y'])
+# p = point(1, 2)
+# print(p)
+# print(type(p))
+
+# from collections import ChainMap
+# dict1 = {'name': 'Albert', 'age': 18}
+# dict2 = {'weight':65, 'height':180}
+# res = list(ChainMap(dict1, dict2))
+# print(res)
