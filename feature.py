@@ -1592,3 +1592,36 @@
 # dict2 = {'weight':65, 'height':180}
 # res = list(ChainMap(dict1, dict2))
 # print(res)
+
+# 过滤
+# ages = [1,2,3,4,5,6,7]
+# res = filter(lambda m: True if m >= 3 else False, ages)
+# print(list(res))
+
+# res = '{}, {}, {}'.format('age', 18, 'name')
+# print(res)
+# print(type(res))
+
+# res = '{0}, {1}, {0}'.format('age', 18, 'name')
+# print(res)
+
+# res = '{name}, {age}, {sex}'.format(age=18, sex='male', name='Albert')
+# print(res)
+
+# print("{:>10}".format('18'))
+# print("{:3>18}".format('18'))
+#
+# print('a'.zfill(10))
+# print('{:.5f}'.format(3.141516))
+#
+# print("{:b}".format(18))
+
+# print(bin(11))
+# print(oct(11))
+# print(hex(11))
+#
+# print(bool(0))
+
+# set_a = {1,2,3,4}
+# set_a.add(5)
+# print(set_a)
