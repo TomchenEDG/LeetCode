@@ -1625,3 +1625,66 @@
 # set_a = {1,2,3,4}
 # set_a.add(5)
 # print(set_a)
+
+
+# 组合表达式
+# dict = {'a':1,
+# #         'b':2,
+# #         'c':3}
+# #
+# # print(max(dict, key=lambda x:dict[x]))
+
+
+# 映射
+# nums = [1, 2, 3, 4, 5]
+# res = map(lambda x:x**2, nums)
+# print(list(res))
+
+# names = ['Jam', 'Har', 'Cur']
+# res = map(lambda x:x+' is super star', names)
+# print(list(res))
+
+# 合并
+# from functools import reduce
+# res = reduce(lambda x, y: x+y,range(1,101),0)
+# print(res)
+
+# list1 = ['1', '2', '3', '4']
+# res = reduce(lambda x, y: x + ' ' + y + ' ',list1)
+# print(res)
+
+
+# 过滤
+# ages = [18, 19, 20, 21, 22]
+# res = filter(lambda n:n >20 , ages)
+# print(list(res))
+
+
+# 拉链函数
+# left = 'hello'
+# right1 = {'x':1, 'y':2, 'z':3}
+# right2 = [1,2,3,4,5]
+#
+# res1 = zip(left, right2)
+# print(list(res1))
+
+
+# 列表
+# a = [0 for i in range(26)]
+# print(a)
+
+# any() all()
+# print(any([1,0,0,0]))
+# print(all([1,0,0,0]))
+
+# 字典 any()
+# dict = {'a':0,
+#         'b':0,
+#         'c':0}
+# print(any(dict.values()))
+
+# pop()
+# a = [1,2,3,4]
+# print(a.pop())
+
+
