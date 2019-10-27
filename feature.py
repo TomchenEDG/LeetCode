@@ -1688,3 +1688,99 @@
 # print(a.pop())
 
 
+# 函数使用不可变类型
+# def register(name, hobby, l=None):
+#     if l is None:
+#         l = []
+#     l.append(hobby)
+#     print(name, l)
+#
+# register('Kobe', 'play')
+# register('James', 'read')
+
+
+# 类的组合
+# class Date:
+#     def __init__(self, year, month, day):
+#         self.year = year
+#         self.month = month
+#         self.day = day
+#     def tell_birth(self):
+#         print('出生年月日<%s-%s-%s>'%(self.year, self.month, self.day))
+# class DeepsharePeople:
+#     school = 'deepshare'
+#     def __init__(self, name, age, gender):
+#         self.name = name
+#         self.age = age
+#         self.gender = gender
+# class DeepshareTeacher(DeepsharePeople):
+#     def __init__(self, name, age, gender, level, salary):
+#         super().__init__(name, age, gender)
+#         self.level = level
+#         self.salary = salary
+#     def change_score(self):
+#         print('teacher %s is changing score'%self.name)
+# class DepshareStudent(DeepsharePeople):
+#     def __init__(self, name, age, gender, course,):
+#         super().__init__(name, age, gender)
+#         self.course = course
+#     def choose(self):
+#         print('student %s choose course'% self.name)
+# tea1 = DeepshareTeacher('albert', 18, 'male', 10, 3.1)
+# date_obj = Date(2000, 1, 1)
+# date_obj.tell_birth()
+# tea1.birth = date_obj
+# print(tea1.birth)
+# tea1.birth.tell_birth()
+# tea1.change_score()
+
+
+# 链映射
+# from collections import ChainMap
+# dict1 = {'name':'Albert', 'age':18}
+# dict2 = {'weight':65, 'height':180}
+# res = list(ChainMap(dict1, dict2))
+# print(res)
+
+
+# hasattr getattr
+# class Foo:
+#     def run(self):
+#         while True:
+#             cmd = input('cmd>>: ').strip()
+#             if hasattr(self, cmd):
+#                 func = getattr(self, cmd)
+#                 func()
+#             elif cmd == 'exit':
+#                 break
+#
+#     def download(self):
+#         print('download...')
+#     def upload(self):
+#         print('upload...')
+#
+# obj = Foo()
+# obj.run()
+
+# 元类
+# code = """
+# x = 1
+# y = 2
+# """
+# global_dic = {}
+# local_dic = {}
+# exec(code, global_dic, local_dic)
+# print(local_dic)
+# print(global_dic)
+
+#
+# code = """
+# global x
+# x = 1
+# y = 2
+# """
+# global_dic = {'x':999}
+# local_dic = {}
+# exec(code, global_dic, local_dic)
+# print(local_dic)
+# print(global_dic)
