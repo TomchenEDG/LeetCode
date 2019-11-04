@@ -1784,3 +1784,79 @@
 # exec(code, global_dic, local_dic)
 # print(local_dic)
 # print(global_dic)
+
+
+
+# from multiprocessing import Process
+# import time
+# def task(name):
+#     print('2 %s 进程开始'%name)
+#     time.sleep(3)
+#     print('3 %s 进程结束'%name)
+#
+# if __name__ == '__main__':
+#     p = Process(target=task, args=('Albert',))
+#     p.start() # 创建子进程
+#     print('1 这是主进程')
+
+
+# 验证父进程和子进程的隔离
+# from multiprocessing import Process
+# import time
+# x = 10
+# def task():
+#     time.sleep(3)
+#     global x
+#     x = 0
+#     print(x, '子进程结束')
+# if __name__ == '__main__':
+#     p = Process(target=task,)
+#     p.start()
+#     time.sleep(5)
+#     print(x)
+
+# 生产者消费者模型
+# import time
+# import random
+# from multiprocessing import Process, Queue
+#
+# def consumer(name, q):
+#     while True:
+#         res = q.get()
+#         time.sleep(random.randint(1,3))
+#         print('%s 吃了 %s'%(name, res))
+#
+# def producer(name, q, food):
+#     for i in range(5):
+#         time.sleep(random.randint(1, 2))
+#         res = '%s%s'%(food, i)
+#         q.put(res)
+#         print('%s 生产了 %s'%(name, res))
+#
+# if __name__ == '__main__':
+#     q = Queue()
+#     # 生产者
+#     p1 = Process(target=producer, args=('Albert主厨', q, '新疆大盘鸡'))
+#     p2 = Process(target=producer, args=('厨神', q, '扬州烤鹅'))
+#     p3 = Process(target=producer, args=('主厨小迷弟', q, '南京回锅肉'))
+#     # 消费者
+#     c1 = Process(target=consumer, args=('孙悟空', q))
+#     c2 = Process(target=consumer, args=('猪八戒', q))
+#
+#     p1.start()
+#     p2.start()
+#     p3.start()
+#     c1.start()
+#     c2.start()
+
+
+# s = {
+#     'j':100,
+#     'k':300,
+#     'z':50,
+#     'i':20,
+# }
+#
+# salaries = sorted(s, key=lambda x:s[x])
+#
+# print(salaries)
