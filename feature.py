@@ -1860,3 +1860,173 @@
 # salaries = sorted(s, key=lambda x:s[x])
 #
 # print(salaries)
+
+
+# a = [0]* 4
+# print(a)
+
+# # N-queen
+# class Solution:
+#     def __init__(self, n):
+#         self.chessboard = [0] * n
+#         self.solution = 0
+#
+#     def queens(self, positon, number_of_queen):
+#         if positon == number_of_queen:
+#             print(self.chessboard)
+#             self.solution+=1
+#             return
+#
+#         for queen in number_of_queen:
+#             self.chessboard[positon] = queen
+#             if self.conflict(positon) == True:
+#                 self.queens(self, positon+1, number_of_queen)
+#
+#     def conflict(self, position):
+#         """
+#         # 检查 所放皇后的 横向、 纵向、 斜线，是否有冲突
+#         :param position: 当前皇后的位置
+#         :return: 冲突则返回True，否则，返回False
+#         """
+#         for i in range(position):
+#             # 检查 当前皇后的位置在 横向、纵向、斜线，是否有冲突
+#             if self.chessboard[i] == self.chessboard[position] or \
+#                     abs(self.chessboard[i] - self.chessboard[position]) == position - i:
+#                 return False
+#         return True
+
+
+# import heapq
+#
+# nums = [2, 3, 5, 1, 54, 23, 132]
+# heap = []
+#
+# # 第一种
+# # for num in nums:
+# #     heapq.heappush(heap, num)
+# #
+# # print(heap)
+#
+# # 第二种
+# for num in nums:
+#     heapq.heappush(heap, num)
+#
+# heapq.heapify(nums)
+# print([heapq.heappop(heap) for _ in range(len(nums))])
+
+
+
+# 组合排序后的作用
+# import heapq
+#
+# num1 = [32, 3, 5, 34, 54, 23, 132]
+# num2 = [23, 2, 12, 656, 324, 23, 54]
+# num1 = sorted(num1)
+# num2 = sorted(num2)
+# print(num1)
+# print(num2)
+#
+# res = heapq.merge(num1, num2)
+# print(list(res))
+
+
+# heapq.heappop() 函数弹出堆中最小值
+# import heapq
+# nums = [2, 43, 45, 23, 12]
+# heapq.heapify(nums)
+#
+# print(heapq.heappop(nums))
+
+
+# 删除堆中最小元素并加入一个元素，可以使用heapq.heaprepalce() 函数
+# import heapq
+# nums = [1,2,4,5,3]
+# heapq.heapify(nums)
+#
+# heapq.heapreplace(nums, 23)
+# print([heapq.heappop(nums) for _ in range(len(nums))])
+
+
+# 获取堆中最大或最小的范围值
+# import heapq
+#
+# nums = [1, 3, 4, 5, 2]
+# print(heapq.nlargest(3, nums))
+# print(heapq.nsmallest(3, nums))
+
+
+# 两个函数还接受一个key参数，用于dict或其他数据结构类型使用
+# import heapq
+# from pprint import pprint
+#
+# portfolio = [
+#     {'name': 'IBM', 'shares': 100, 'price': 91.1},
+#     {'name': 'AAPL', 'shares': 50, 'price': 543.22},
+#     {'name': 'FB', 'shares': 200, 'price': 21.09},
+#     {'name': 'HPQ', 'shares': 35, 'price': 31.75},
+#     {'name': 'YHOO', 'shares': 45, 'price': 16.35},
+#     {'name': 'ACME', 'shares': 75, 'price': 115.65}]
+#
+# cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])
+# expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])
+#
+# pprint(cheap)
+# pprint(expensive)
+
+
+# matrix = [[ 1,  5,  9],
+#           [10, 11, 13],
+#           [12, 13, 15]]
+# k = 8
+#
+# import heapq
+#
+# h = []
+# m, n = len(matrix), len(matrix[0])
+#
+# for i in range(n):
+#     heapq.heappush(h, (matrix[0][i], 0, i))
+#     # print(h)
+# for i in range(k - 1):
+#     item = heapq.heappop(h)
+#     print(item)
+#     if item[1] + 1 < m:
+#         heapq.heappush(h, (matrix[item[1] + 1][item[2]], item[1] + 1, item[2]))
+
+# for i in range(100):
+#     if i & 1:
+#         print(i)
+
+# class Solution(object):
+#     def singleNumber(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         a = 0
+#         for i in nums:
+#             a ^= i
+#         return a
+#
+# def main():
+#     nums = [4,2,1,2,1,4,3]
+#     r = Solution()
+#     value = r.singleNumber(nums)
+#     print(value)
+#
+#
+#
+# if __name__ == '__main__':main()
+
+
+
+# class Solution:
+#     def majorityElement(self, nums):
+#         majority_count = len(nums)//2
+#         for num in nums:
+#             count = sum(1 for elem in nums if elem == num)
+#             if count > majority_count:
+#                 return num
+#
+# r = Solution()
+# print(r.majorityElement([2,3,2,3,2,2,]))
